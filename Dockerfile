@@ -2,11 +2,11 @@ FROM node:14
 
 WORKDIR /app
 
-COPY /opt/jenkins_agent/workspace/test_node_pipeline/package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
-COPY /opt/jenkins_agent/workspace/test_node_pipeline .
+COPY . .
 
 # Expose the port the app runs on
 EXPOSE 3000
