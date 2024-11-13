@@ -1,19 +1,21 @@
 const request = require('supertest');
-//const server = require('../index.js');
-//const app = request(server);
 
 describe('GET /', () => {
-  var server;
-  beforeEach(function () {
+  let server;
+
+  beforeEach(() => {
+    // Указываем порт через переменную окружения перед загрузкой сервера
+    process.env.PORT = 8080;
     server = require('../index');
   });
-  afterEach(function () {
-    server.close();
+
+  afterEach(() => {
+    server.close(); // Закрываем сервер после каждого теста
   });
-  it('responds to /', function testSlash(done) {
+
+  it('responds to /', (done) => {
     request(server)
       .get('/')
       .expect(200, done);
   });
 });
-
