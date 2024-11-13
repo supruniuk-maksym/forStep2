@@ -12,3 +12,4 @@ var server = app.listen(port, () => {
 });
 
 module.exports = server;
+console.log(`Server is starting on port ${port}`);
