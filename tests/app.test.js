@@ -4,13 +4,13 @@ describe('GET /', () => {
   let server;
 
   beforeEach(() => {
-    // Указываем порт через переменную окружения перед загрузкой сервера
+    // 
     process.env.PORT = 8080;
     server = require('../index');
   });
 
   afterEach(() => {
-    server.close(); // Закрываем сервер после каждого теста
+    server.close(); //
   });
 
   it('responds to /', (done) => {
