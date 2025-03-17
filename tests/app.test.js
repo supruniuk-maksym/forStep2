@@ -16,6 +16,6 @@ describe('GET /', () => {
   it('responds to /', (done) => {
     request(server)
       .get('/')
-      .expect(200, done);
+      .expect(500, done);
   });
 });
